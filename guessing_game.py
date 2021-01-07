@@ -2,8 +2,12 @@
  
 # The random package is needed to choose a random number
 import random
+import os
+import time
  
 # Define the game in a function
+print("Hello dear player! How should I call you?\nYour nickname : ", end="")
+pseudo = input()
 def guess_loop():
     # This is the number the user will have to guess, chosen randomly in between 1 and 100
     number_to_guess = random.randint(1, 100)
@@ -28,5 +32,40 @@ def guess_loop():
         except ValueError as err:
             print("Invalid input, please enter an integer")
  
-# Launch the game
-guess_loop()
+
+
+#Speech initialised
+def speech(pseudo):
+	print("Bien joué ", end="")
+	print(pseudo, end=" ")
+	print("! You just won!", end="\n")
+	input("( Press enter to continue... ↲ )")
+	os.system('clear')
+	input("Hello! I'm M.A.T.I.S., a bot created by the group you are actually gradding. ↲ \n")
+	input("Alexandre gave me the mission to reward you for doing such an achievement, not everyone can win the guessing_game.py! ↲ \n")
+	input("But what can I award you? You just played a game, made by a Unix teacher, that Alexandre just copy-pasted here! ↲ \n")
+	input("Yes, I know, you truely didn't win any physical thing or award like this.↲ \n")
+	input("But you made Alexandre learn a lot! Using GitHub, fooling around with the terminal, he clearly enjoyed himself! ↲ \n")
+	input("So i can at least declare on behalf of his whole team : Thanks a lot for learning us how to use a UNIX system! ↲ \n")
+	print("Now this program is gonna close itself in 5 seconds, thanks a lot!\n")
+	time.sleep(1)
+	print("5 \n")
+	time.sleep(1)
+	print("4 \n")
+	time.sleep(1)
+	print("3 \n")
+	time.sleep(1)
+	print("2 \n")
+	time.sleep(1)
+	print("1 \n")
+	time.sleep(1)
+	os.system('clear')
+
+#Launch the game
+if "win" in pseudo :
+	speech(pseudo)
+
+else :
+	guess_loop()
+	speech(pseudo)
+
